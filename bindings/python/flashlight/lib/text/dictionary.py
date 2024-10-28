@@ -10,6 +10,7 @@ from .flashlight_lib_text_dictionary import (  # @manual=fbcode//deeplearning/pr
     create_word_dict,
     Dictionary,
     load_words,
+    copy_dict,
     pack_replabels,
     unpack_replabels,
 )

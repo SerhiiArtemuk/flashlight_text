@@ -35,6 +35,7 @@ from flashlight.lib.text.dictionary import (
     Dictionary,
     load_words,
     pack_replabels,
+    copy_dict
 )
 
 
