@@ -25,6 +25,12 @@ Dictionary createWordDict(const LexiconMap& lexicon) {
   return dict;
 }
 
+Dictionary copyDict(const Dictionary& dict) {
+    Dictionary copiedDict;
+    copiedDict = dict;
+    return copiedDict;
+}
+
 LexiconMap loadWords(const std::string& filename, int maxWords) {
   LexiconMap lexicon;
 

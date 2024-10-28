@@ -23,6 +23,8 @@ using LexiconMap =
 
 FL_TEXT_API Dictionary createWordDict(const LexiconMap& lexicon);
 
+FL_TEXT_API Dictionary copyDict(const Dictionary& dict);
+
 FL_TEXT_API LexiconMap
 loadWords(const std::string& filename, int maxWords = -1);
 
