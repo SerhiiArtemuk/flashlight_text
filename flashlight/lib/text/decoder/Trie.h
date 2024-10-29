@@ -66,6 +66,12 @@ class FL_TEXT_API Trie {
   Trie(int maxChildren, int rootIdx)
       : root_(std::make_shared<TrieNode>(rootIdx)), maxChildren_(maxChildren) {}
 
+  // Copy constructor
+  Trie(const Trie& other);
+
+  // Copy method
+  Trie copy() const;
+
   /* Return the root node pointer */
   const TrieNode* getRoot() const;
 

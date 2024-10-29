@@ -99,6 +99,11 @@ void Trie::smear(SmearingMode smearMode) {
     smearNode(root_, smearMode);
   }
 }
+
+Trie Trie::copy() const {
+  return *this;  // Calls the copy constructor
+}
+
 } // namespace text
 } // namespace lib
 } // namespace fl

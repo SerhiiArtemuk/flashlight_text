@@ -11,6 +11,7 @@
 #include "flashlight/lib/text/String.h"
 #include "flashlight/lib/text/dictionary/Defines.h"
 #include "flashlight/lib/text/dictionary/Utils.h"
+#include ""
 
 namespace fl {
 namespace lib {
@@ -30,6 +31,10 @@ Dictionary copyDict(const Dictionary& dict) {
     return copiedDict;
 }
 
+Trie copyTrie(const Trie& trie) {
+    Trie copiedTrie = trie.copy();
+    return copiedTrie;
+}
 
 LexiconMap loadWords(const std::string& filename, int maxWords) {
   LexiconMap lexicon;

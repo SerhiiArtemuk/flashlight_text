@@ -11,6 +11,7 @@ from .flashlight_lib_text_dictionary import (  # @manual=fbcode//deeplearning/pr
     Dictionary,
     load_words,
     copy_dict,
+    copy_trie,
     pack_replabels,
     unpack_replabels,
 )

@@ -13,6 +13,7 @@
 
 #include "flashlight/lib/text/Defines.h"
 #include "flashlight/lib/text/dictionary/Dictionary.h"
+#include "flashlight/lib/text/decoder/Trie.h"
 
 namespace fl {
 namespace lib {
@@ -22,6 +23,8 @@ using LexiconMap =
     std::unordered_map<std::string, std::vector<std::vector<std::string>>>;
 
 FL_TEXT_API Dictionary createWordDict(const LexiconMap& lexicon);
+
+FL_TEXT_API Trie copyTrie(const Trie& trie);
 
 FL_TEXT_API Dictionary copyDict(const Dictionary& dict);
 

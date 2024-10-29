@@ -54,6 +54,7 @@ PYBIND11_MODULE(flashlight_lib_text_dictionary, m) {
           "indices"_a);
   m.def("create_word_dict", &createWordDict, "lexicon"_a);
   m.def("copy_dict", &copyDict, "dict"_a);
+  m.def("copy_tire", &copyTrie, "trie"_a);
   m.def("load_words", &loadWords, "filename"_a, "max_words"_a = -1);
   m.def("pack_replabels", &packReplabels, "tokens"_a, "dict"_a, "max_reps"_a);
   m.def(
