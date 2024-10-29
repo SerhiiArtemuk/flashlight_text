@@ -25,6 +25,12 @@ class FL_TEXT_API Dictionary {
   // Creates an empty dictionary
   Dictionary() {}
 
+  // Copy constructor
+  Dictionary(const Dictionary& other);
+
+  // Copy method
+  Dictionary copy() const;
+
   explicit Dictionary(std::istream& stream);
 
   explicit Dictionary(const std::string& filename);

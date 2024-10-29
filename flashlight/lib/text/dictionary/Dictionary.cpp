@@ -17,6 +17,15 @@ namespace fl {
 namespace lib {
 namespace text {
 
+Dictionary::Dictionary(const Dictionary& other)
+    : entry2idx_(other.entry2idx_),
+      idx2entry_(other.idx2entry_),
+      defaultIndex_(other.defaultIndex_) {}
+
+Dictionary Dictionary::copy() const {
+  return *this;  // Calls the copy constructor
+}
+
 Dictionary::Dictionary(std::istream& stream) {
   createFromStream(stream);
 }
@@ -37,6 +46,7 @@ Dictionary::Dictionary(const std::vector<std::string>& tkns) {
     throw std::runtime_error("Invalid dictionary format - not contiguous");
   }
 }
+
 
 void Dictionary::createFromStream(std::istream& stream) {
   if (!stream) {
