@@ -100,8 +100,13 @@ void Trie::smear(SmearingMode smearMode) {
   }
 }
 
+// Copy constructor (shallow copy)
+Trie::Trie(const Trie& other)
+    : root_(other.root_), maxChildren_(other.maxChildren_) {}
+
+// Copy method
 Trie Trie::copy() const {
-  return *this;  // Calls the copy constructor
+  return Trie(*this);  // Uses the copy constructor
 }
 
 } // namespace text
