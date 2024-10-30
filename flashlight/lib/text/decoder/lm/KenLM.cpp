@@ -20,7 +20,8 @@
 #error "KenLM header not found (kenlm/lm/model.hh)."
 #endif // __has_include
 #endif // USE_KENLM_FROM_LANGTECH
-
+#include <iostream>
+using namespace std;
 namespace fl {
 namespace lib {
 namespace text {
@@ -64,6 +65,8 @@ std::pair<LMStatePtr, float> KenLM::score(
     const LMStatePtr& state,
     const int usrTokenIdx) {
   if (usrTokenIdx < 0 || usrTokenIdx >= usrToLmIdxMap_.size()) {
+    cout << "ustTokenIdx" + std::to_string(usrTokenIdx);
+    cout << "usrToLmIdxMap_" + std::to_string(usrToLmIdxMap_.size());
     throw std::runtime_error(
         "[KenLM] Invalid user token index: " + std::to_string(usrTokenIdx));
   }
