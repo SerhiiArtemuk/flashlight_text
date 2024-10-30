@@ -100,13 +100,31 @@ void Trie::smear(SmearingMode smearMode) {
   }
 }
 
-// Copy constructor (shallow copy)
+// Deep copy constructor
 Trie::Trie(const Trie& other)
-    : root_(other.root_), maxChildren_(other.maxChildren_) {}
+    : root_(deepCopyNode(other.root_)), maxChildren_(other.maxChildren_) {}
 
 // Copy method
 Trie Trie::copy() const {
   return Trie(*this);  // Uses the copy constructor
+}
+
+// Helper function to recursively copy TrieNode and its children
+TrieNodePtr Trie::deepCopyNode(const TrieNodePtr& node) const {
+  if (!node) return nullptr;
+  
+  // Create a new TrieNode with the same data as the current node
+  TrieNodePtr newNode = std::make_shared<TrieNode>(node->idx);
+  newNode->labels = node->labels;
+  newNode->scores = node->scores;
+  newNode->maxScore = node->maxScore;
+
+  // Recursively copy each child node
+  for (const auto& [key, childNode] : node->children) {
+    newNode->children[key] = deepCopyNode(childNode);
+  }
+
+  return newNode;
 }
 
 } // namespace text

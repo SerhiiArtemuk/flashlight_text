@@ -92,6 +92,7 @@ class FL_TEXT_API Trie {
   void smear(const SmearingMode smear_mode);
 
  private:
+  TrieNodePtr deepCopyNode(const TrieNodePtr& node) const;  // Recursive helper for deep copy
   TrieNodePtr root_;
   int maxChildren_; // The maximum number of childern for each node. It is
   // usually the size of letters or phonmes.
